@@ -21,7 +21,20 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/api', api)
+app.use('/api', api);
+
+if (process.env.MODE_ENV === 'production') {
+  // Express vai entregar as assets de produção
+  // Como por exemplo: mais.js ou o main.css
+  app.user(express.static('frontend/build'));
+
+  // Express vai entregar o index.html, se não reconhecer a rota
+  const path = require('path')
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'inde.html'))
+  })
+}
+
 
 const PORT = process.env.PORT;
 app.listen(PORT);
