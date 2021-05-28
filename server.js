@@ -31,7 +31,7 @@ if (process.env.MODE_ENV === 'production') {
   // Express vai entregar o index.html, se não reconhecer a rota
   const path = require('path')
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'inde.html'))
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
   })
 }
 
