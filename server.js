@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.use('/api', api);
 
-if (process.env.MODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   // Express vai entregar as assets de produção
   // Como por exemplo: mais.js ou o main.css
   app.user(express.static('frontend/build'));
