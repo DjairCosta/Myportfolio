@@ -8,22 +8,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-//console.log("Name for database MongoDB", process.env.MONGO_DB);
-//console.log("Name for user MongoDB", process.env.MONGO_USER);
-
-
-//app.get('/', (req, res) => {
-//res.json({
-//'success': true
-
-//});
-
-//});
-
-
 app.use('/api', api);
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV == 'production') {
   // Express vai entregar as assets de produção
   // Como por exemplo: mais.js ou o main.css
   app.user(express.static('frontend/build'));
