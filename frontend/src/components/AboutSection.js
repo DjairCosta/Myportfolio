@@ -21,8 +21,10 @@ const AboutSection = () => {
                 </p>
 
                 <button>Contact Me</button>
-
             </Description>
+            <Image>
+                <img alt='Djair Costa' src={profile} />
+            </Image>
         </About>
 
     )
