@@ -6,7 +6,7 @@
   "scripts": {
     "backend": "nodemon server.js",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" ",
     "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -16,22 +16,24 @@
     "Express",
     "React.js",
     "Node.js",
-    "FullStack"
+    "Fullstack"
   ],
-  "author": "Djair Costa",
+  "author": "Reginaldo Santos",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "dotenv": "^9.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.9",
-    "slug": "^5.0.1"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8",
+    "shrink-ray-current": "^4.1.2",
+    "slug": "^4.0.2"
   },
   "devDependencies": {
-    "concurrently": "^6.2.0",
-    "nodemon": "^2.0.7"
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
   },
   "engines": {
-    "node": "14.x"
+    "node": "12.x"
   }
 }
