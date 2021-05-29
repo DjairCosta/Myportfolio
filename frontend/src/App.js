@@ -30,7 +30,6 @@ function App() {
           <ContactMe />
         </Route>
       </Switch>
-
     </div>
   );
 }
