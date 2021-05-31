@@ -28,9 +28,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.11.8",
     "shrink-ray-current": "^4.1.2",
-    "slug": "^4.0.2",
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.6"
+    "slug": "^4.0.2"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
