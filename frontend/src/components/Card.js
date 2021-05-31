@@ -8,61 +8,61 @@ const Card = () => {
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
             <StyledCard>
                 <Content>
                     <Image src="https://images.pexels.com/photos/1150988/pexels-photo-1150988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <div>
+                    <Info>
                         <h3>Title</h3>
                         <h4>Date</h4>
                         <p>Short description</p>
-                    </div>
+                    </Info>
                 </Content>
             </StyledCard>
         </>
@@ -90,6 +90,12 @@ const Content = styled.div`
 
 const Image = styled.img`
     width: 100%;
+    height: 100%
+
+`;
+
+const Info = styled.div`
+
 `;
 
 export default Card
