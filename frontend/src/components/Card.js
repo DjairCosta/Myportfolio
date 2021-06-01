@@ -2,74 +2,21 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { useApi } from '../hooks/useApi'
 
-const Card = () => {
-    const { data } = useApi('/portfolio')
+const Card = ({ project }) => {
+
     return (
-        <>
-            {data && JSON.stringify(data)}
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-            <StyledCard>
-                <Content>
-                    <Image src="https://images.pexels.com/photos/1150988/pexels-photo-1150988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <Info>
-                        <h3>Title</h3>
-                        <h4>Date</h4>
-                        <p>Short description</p>
-                    </Info>
-                </Content>
-            </StyledCard>
-        </>
+        <StyledCard>
+            <Content>
+                <Image src="{project.image}" />
+                <Info>
+                    <h3>{project.title}</h3>
+                    <h4>{project.createdAt}</h4>
+                    <p>{project.description}</p>
+                </Info>
+            </Content>
+        </StyledCard>
+
     )
 
 }
@@ -89,12 +36,12 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    height: 100%;
+    height: 65vh;
 `;
 
 const Image = styled.img`
     width: 100%;
-    height: 100%
+    height: 50%;
 
 `;
 

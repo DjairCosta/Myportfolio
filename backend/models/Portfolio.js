@@ -22,6 +22,10 @@ const portfolioSchema = new Schema({
         type: String,
         require: true
     },
+    image: {
+        type: String,
+        require: true
+    },
     createdAt: {
         type: Date,
         default: Date.now()
