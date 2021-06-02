@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 import styled from 'styled-components'
 
@@ -8,10 +9,10 @@ const Card = ({ project }) => {
     return (
         <StyledCard>
             <Content>
-                <Image src="{project.image}" />
+                <Image src={project.image} />
                 <Info>
                     <h3>{project.title}</h3>
-                    <h4>{project.createdAt}</h4>
+                    <h4>{moment(project.createdAt).format('MMM YYYY')}</h4>
                     <p>{project.description}</p>
                 </Info>
             </Content>
@@ -36,12 +37,12 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    height: 65vh;
+    height: 100%;
 `;
 
 const Image = styled.img`
     width: 100%;
-    height: 50%;
+    height: 100%;
 
 `;
 

@@ -4,6 +4,7 @@ import React from 'react'
 //  About
 import AboutUs from './pages/AboutUs'
 import Portfolio from './pages/Portfolio'
+import PortfolioDetail from './components/PortfolioDetail'
 import ContactMe from './pages/ContactMe'
 
 // Global Style
@@ -23,8 +24,11 @@ function App() {
         <Route exact path="/">
           <AboutUs />
         </Route>
-        <Route path="/portfolio">
+        <Route path="/portfolio" exact>
           <Portfolio />
+        </Route>
+        <Route path="/portfolio/:id">
+          <PortfolioDetail />
         </Route>
         <Route path="/contact">
           <ContactMe />
