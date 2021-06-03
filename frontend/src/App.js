@@ -1,6 +1,12 @@
 
 import React from 'react'
 
+// Icons
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+
 //  About
 import AboutUs from './pages/AboutUs'
 import Portfolio from './pages/Portfolio'
@@ -16,6 +22,7 @@ import { Route, Switch } from 'react-router-dom'
 
 
 function App() {
+  library.add(fab, fas)
   return (
     <div>
       <GlobalStyle />
@@ -24,11 +31,8 @@ function App() {
         <Route exact path="/">
           <AboutUs />
         </Route>
-        <Route path="/portfolio" exact>
+        <Route path="/portfolio">
           <Portfolio />
-        </Route>
-        <Route path="/portfolio/:id">
-          <PortfolioDetail />
         </Route>
         <Route path="/contact">
           <ContactMe />
