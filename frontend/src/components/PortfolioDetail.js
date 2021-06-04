@@ -82,6 +82,7 @@ const Detail = styled.div`
     border-radius: 1rem;
     background: white;
     position: absolute;
+    border-radius: 1rem;
     left: 10%;
     top: 15%;
     margin-bottom: 10%;

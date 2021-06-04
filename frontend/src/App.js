@@ -12,31 +12,29 @@ import AboutUs from './pages/AboutUs'
 import Portfolio from './pages/Portfolio'
 import PortfolioDetail from './components/PortfolioDetail'
 import ContactMe from './pages/ContactMe'
+import Admin from './pages/Admin'
 
 // Global Style
 import GlobalStyle from './components/GlobalStyle'
 import Nav from './components/Nav'
 
 //Roteamento
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 
 
 function App() {
+  const location = useLocation()
   library.add(fab, fas)
   return (
     <div>
       <GlobalStyle />
-      <Nav />
+      {location.pathname !== '/admin' && <Nav />}
       <Switch>
-        <Route exact path="/">
-          <AboutUs />
-        </Route>
-        <Route path="/portfolio">
-          <Portfolio />
-        </Route>
-        <Route path="/contact">
-          <ContactMe />
-        </Route>
+        <Route exact path="/" component={AboutUs} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contact" component={ContactMe} />
+        <Route path="/admin" component={Admin} />
+
       </Switch>
     </div>
   );

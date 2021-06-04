@@ -10,7 +10,7 @@ const Nav = () => {
 
     const menuOptions = {
         about: '<About Me />',
-        portfolio: '<portfolio />',
+        portfolio: '<Portfolio />',
         contact: 'Contact Me />'
 
     }
@@ -19,8 +19,8 @@ const Nav = () => {
             <h1><Link to='/'>Djair Costa</Link></h1>
             <ul>
                 <li><Link to='/' >{menuOptions.about}</Link></li>
-                <li><Link to='/Portfolio'>{menuOptions.portfolio}</Link></li>
-                <li><Link to='/Contact'>{menuOptions.contact}</Link></li>
+                <li><Link to='/portfolio'>{menuOptions.portfolio}</Link></li>
+                <li><Link to='/contact'>{menuOptions.contact}</Link></li>
             </ul>
         </StyledNav>
     )
@@ -36,6 +36,7 @@ const StyledNav = styled.nav`
     background: #282828;
     position: sticky;
     top: 0;
+    z-index: 10;
     ul{
         display: flex;
         list-style: none;

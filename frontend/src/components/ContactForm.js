@@ -6,15 +6,12 @@ import styled from 'styled-components'
 import { save } from '../services/Sheet'
 
 
-
-
 const ContactForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [success, setSuccess] = useState('');
-    const [error, setError] = useState('');
-
+    const [success, setSucesso] = useState(false);
+    const [erro, setErro] = useState(false);
 
     const resetForm = () => {
         setName('');
@@ -25,10 +22,10 @@ const ContactForm = () => {
     const contactMeHandler = async (e) => {
         e.preventDefault()
 
-        //if (name === '' || email === '' || message === '') {
-        // setErro(true)
-        //return
-        //}
+        if (name === '' || email === '' || message === '') {
+            setErro(true)
+            return
+        }
 
         const data = {
             Name: name,
@@ -37,15 +34,14 @@ const ContactForm = () => {
             Data: moment().format('DD/MM/YYYY'),
         }
 
-        const result = await save(data)
-
+        const result = await save(data);
 
         if (result) {
-            setSuccess(result)
+            setSucesso(result)
             resetForm();
         }
         else {
-            setError(!result)
+            setErro(!result)
         }
     }
 
@@ -76,8 +72,8 @@ const ContactForm = () => {
                 />
             </Input>
             <button type="submit">Submit</button>
-            {success && <h4>Message sent with sucess!</h4>}
-            {error && <h4>An error has occurred, please resubmit!</h4>}
+            {success && <h4>Mensagem enviada com sucesso!</h4>}
+            {erro && <h4>Ocorreu um erro, por favor envie novamente!</h4>}
         </Form>
     )
 }

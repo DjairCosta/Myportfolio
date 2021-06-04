@@ -1,92 +1,104 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// Import Icon
+//import ReactPlayer from 'react-player'
+
+// Import icons
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
-import { faLaptopCode, faGraduationCap, faRunning } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { About, Description } from '../styles'
 
-import { About, Description, Image } from '../styles'
+import { scrollReveal } from '../animation'
+import { useScroll } from '../hooks/useScroll'
 
 const ServicesSection = () => {
+    const [element, controls] = useScroll()
     return (
-        <Services>
-            <Image>
-                <img src="https://www.lojavirtual.com.br/wp-content/uploads/2017/09/produtos-servi%C3%A7os.png" />
-            </Image>
-            <ServiceDescription>
-                <h2>Things I do</h2>
+        <Services
+            variants={scrollReveal}
+            animate={controls}
+            initial='hidden'
+            ref={element}
+        >
+            <Description>
+                <h2>
+                    Things I <span>do</span>
+                </h2>
                 <Cards>
                     <Card>
-                        <div className="icon">
-                            <FontAwesomeIcon icon={faLaptopCode} size='4x' />
-                            <h3>Portfólio</h3>
+                        <div className='icon'>
+                            <FontAwesomeIcon icon={faLaptopCode} size='5x' />
+                            <h3>Portfolio</h3>
                         </div>
-                        <p>Check my work on my portfolio</p>
+                        <p>Check my work on my Portfolio.</p>
                     </Card>
                     <Card>
-                        <div className="icon">
-                            <FontAwesomeIcon icon={faGraduationCap} size='4x' />
+                        <div className='icon'>
+                            <FontAwesomeIcon icon={faGraduationCap} size='5x' />
                             <h3>Courses</h3>
                         </div>
-                        <p>Check my work on my portfolio</p>
+                        <p>Courses at Udemy and other platforms (Portuguese only).</p>
                     </Card>
                     <Card>
-                        <div className="icon">
-                            <FontAwesomeIcon icon={faRunning} size='4x' />
+                        <div className='icon'>
+                            <FontAwesomeIcon icon={faImages} size='5x' />
                             <h3>Hobbies</h3>
                         </div>
-                        <p>Check my work on my portfolio</p>
+                        <p>Some photos and videos of my experience in travel, Brasil.</p>
                     </Card>
                     <Card>
-                        <div className="icon">
-                            <FontAwesomeIcon icon={faGithubSquare} size='4x' />
-                            <h3>GitHub</h3>
+                        <div className='icon'>
+                            <FontAwesomeIcon icon={faGithubSquare} size='5x' />
+                            <h3>My code</h3>
                         </div>
-                        <p>Check my work on my portfolio</p>
+                        <p>Check my Github Portfolio.</p>
                     </Card>
                 </Cards>
-            </ServiceDescription>
+            </Description>
         </Services>
     )
 }
 
 const Services = styled(About)`
-   h3{
-       padding-top: 5rem;
-   }  
-   p{
-       width: 70%;
-       padding:2rem 0rem 4rem 0rem
-   }
-`;
-
-const ServiceDescription = styled(Description)`
-   flex: 2;
-`;
+    h2 {
+        padding-bottom: 5rem;
+    }
+    p {
+        width: 70%;
+        padding: 2rem 0rem 4rem 0rem;
+    }
+`
 
 const Cards = styled.div`
-   display: flex;
-   flex-wrap: wrap;
-   padding: 1rem;
-
-`;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 1300px) {
+        justify-content: center;
+    }
+`
 
 const Card = styled.div`
-   padding: 0.5rem;
-   flex-basis: 20rem;
-   .icon{
-      display: flex;
-      align-items: center; 
-   }
-   h3{
-       margin-left: 1rem;
-       background: white;
-       color: black;
-       padding: 1rem;
-   }
+    flex-basis: 20rem;
+    .icon {
+        display: flex;
+        align-items: center;
+        img{
+        fill: blue;
+        }
+        h3 {
+        margin-left: 1rem;
+        background: white;
+        color: black;
+        padding: 1rem;
+        }
+    }
+`
 
-`;
-
+const Video = styled.div`
+    z-index: 2;
+    flex: 1;
+    overflow: hidden;
+`
 export default ServicesSection

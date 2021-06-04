@@ -14,12 +14,13 @@ const Portfolio = () => {
     return (
         <PortfolioList>
             {slug && <PortfolioDetail slug={slug} />}
-            <CardList>
-                {data?.data?.map(project => {
-                    return (<Card key={project.slug} project={project} />)
-                })}
-
-            </CardList>
+            <Hide>
+                <CardList>
+                    {data?.data?.map(project => {
+                        return (<Card key={project.slug} project={project} />)
+                    })}
+                </CardList>
+            </Hide>
         </PortfolioList>
     )
 }
@@ -29,6 +30,11 @@ const PortfolioList = styled.div`
      overflow: hidden;
      padding: 5rem 10rem;
 `;
+
+const Hide = styled.div`
+    overflow: hidden;
+`;
+
 
 const CardList = styled.div`
     display: grid;
