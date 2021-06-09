@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
 
     const menuOptions = {
-        about: '<About Me />',
-        portfolio: '<Portfolio />',
-        contact: 'Contact Me />'
+        about: 'About Me',
+        portfolio: 'Portfolio',
+        contact: 'Contact Me'
 
     }
     return (

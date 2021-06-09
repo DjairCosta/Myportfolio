@@ -22,11 +22,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bootstrap": "4.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^5.11.8",
+    "react-bootstrap": "^1.6.1",
     "react-intersection-observer": "^8.32.0",
     "shrink-ray-current": "^4.1.2",
     "slug": "^4.0.2"

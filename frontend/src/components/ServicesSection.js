@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 // Import icons
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
-import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faGraduationCap, faImage, faImages } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { About, Description } from '../styles'
