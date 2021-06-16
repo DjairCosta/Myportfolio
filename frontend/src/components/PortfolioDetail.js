@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { faLaptopCode, faGraduationCap, faImage, faImages } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faGraduationCap, faImage, faImages, faDatabase } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useHistory } from 'react-router-dom'
 
@@ -33,7 +33,6 @@ const PortfolioDetail = ({ slug }) => {
                     </div>
                     <Info>
                         <h3>Technologies</h3>
-
                         <Technologies>
                             {
                                 data?.data?.technologies.map(tech => {
