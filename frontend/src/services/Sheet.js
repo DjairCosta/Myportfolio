@@ -3,14 +3,14 @@ import axios from 'axios'
 export const save = (data) => {
     const config = {
         method: 'post',
-        url: "https://sheet.best/api/sheets/80798045-9eae-40d5-b2d5-3e30ba35d527",
+        url: "https://sheet.best/api/sheets/b3a7297c-ebe4-4c17-bc2d-919cc1dbb96b",
         headers: {
             "Content-Type": "application/json",
         },
         data
     };
 
-    //console.log("spreadsheet config", config)
+    console.log("spreadsheet config", config)
 
     return axios(config)
         .then(res => {

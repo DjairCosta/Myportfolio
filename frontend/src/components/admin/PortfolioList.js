@@ -7,24 +7,22 @@ import moment from 'moment'
 import { useApi } from '../../hooks/useApi'
 import Dialog from './Dialog'
 import PortfolioForm from './PortfolioForm'
-import {deleteItem, editItem, addPortfolioItem} from '../../services/api'
+import {deleteItem, editItem, addItem} from '../../services/api'
 
 
 
 const PortfolioList = () => {
-
     const handleDel = (slug) => {
-        console.log("Delete with success!", slug)
         deleteItem(slug)
     }
     const handleAdd = (slug, data) =>{
         addPortfolioItem(data)
-        console.log("Add with success!")
-        //addItem(data)
+      
+       
     }
     const handleEdit = (slug, data) => {
-        console.log("Edit with success!", slug)
-        editItem(slug)
+        editPortfolioItem(slug, data)
+        
     }
 
     const[title, setTitle] = useState()
@@ -83,6 +81,26 @@ const PortfolioList = () => {
     }
 
     const addPortfolioItem = (data) => {
+        const tech = data.tech.map(i => {
+            delete i._id
+            return i
+        })
+
+        const newPortfolioItem = {
+            title: data.title,
+            description: data.description,
+            longDescription: data.longDescription,
+            image: data.image,
+            technologies: data.tech
+        }
+        addItem(newPortfolioItem)
+    }
+
+    const editPortfolioItem = (slug, data) => {
+        const tech = data.tech.map(i => {
+            delete i._id
+            return i
+        })
         const newPortfolioItem = {
             title: data.title,
             description: data.description,
@@ -90,10 +108,7 @@ const PortfolioList = () => {
             image: data.image,
             technologies: data.tech
         }
-        console.log("My new item of portfolio", newPortfolioItem)
-    }
-
-    const editPortfolioItem = (slug, data) => {
+        editItem(slug, newPortfolioItem)
         
     }
 
@@ -131,6 +146,7 @@ const PortfolioList = () => {
 
            <Dialog show={show} setShow={setShow} currentAction={currentAction}slug={slug}>
                {currentAction.showBody && currentAction.body}
+               
                {!currentAction.showBody && (
                <PortfolioForm 
                     title={title}

@@ -1,9 +1,7 @@
 import React from 'react'
 
-import PortfolioList from './PortfolioList'
-import PortfolioForm from './PortfolioForm'
 
-import { Modal, Button, Container } from 'react-bootstrap'
+import { Modal, Button} from 'react-bootstrap'
 
 
 const Dialog = ({ show, setShow, currentAction, slug, children}) => {

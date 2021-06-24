@@ -1,26 +1,24 @@
+import React from 'react'
 
-import React from 'react';
+import {motion} from 'framer-motion'
+import {pageAnimation} from '../animation'
 
 import AboutSection from '../components/AboutSection'
-import ServicesSection from '../components/ServicesSection'
-
-import { pageAnimation } from '../animation'
-import { motion } from 'framer-motion'
-
-import ScrollTop from '../components/Scrolltop'
+import ServicesSection  from '../components/ServicesSection'
+import ScrollTop from '../components/ScrollTop'
 
 const AboutUs = () => {
-    return (
+    return(
         <motion.div
             initial='hidden'
             animate='show'
             exit='exit'
-            variants={pageAnimation}>
+            variants={pageAnimation}
+            >
             <AboutSection />
             <ServicesSection />
             <ScrollTop />
         </motion.div>
-
     )
 }
 

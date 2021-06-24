@@ -13,6 +13,8 @@ import Portfolio from './pages/Portfolio'
 import PortfolioDetail from './components/PortfolioDetail'
 import ContactMe from './pages/ContactMe'
 import Admin from './pages/Admin'
+import {SignupForm, LoginForm} from './components/auth/Authentication'
+
 
 // Global Style
 import GlobalStyle from './components/GlobalStyle'
@@ -34,6 +36,8 @@ function App() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={ContactMe} />
         <Route path="/admin" component={Admin} />
+        <Route path='/signup' component={SignupForm} />
+        <Route path='/login' component={LoginForm} />
 
       </Switch>
     </div>

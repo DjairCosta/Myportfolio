@@ -1,13 +1,11 @@
 import React from 'react'
 
 import styled from 'styled-components'
-
-import { faLaptopCode, faGraduationCap, faImage, faImages, faDatabase } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useHistory } from 'react-router-dom'
 
 import { useApi } from '../hooks/useApi'
-
 
 const PortfolioDetail = ({ slug }) => {
     const history = useHistory()
@@ -23,16 +21,17 @@ const PortfolioDetail = ({ slug }) => {
 
     return (
         <CardShaddow className="shaddow" onClick={exitDetailHandler}>
-            <Detail>
+            <Detail layoutId={slug}>
                 <Stats>
                     <div>
                         <Title layoutId={`title ${slug}`}>{data?.data?.title}</Title>
                         <DescriptionShort>
-                            <p layoutId={`descr ${slug}`}>{data?.data?.description}</p>
+                            <p layoutId={`description ${slug}`}>{data?.data?.description}</p>
                         </DescriptionShort>
                     </div>
                     <Info>
                         <h3>Technologies</h3>
+
                         <Technologies>
                             {
                                 data?.data?.technologies.map(tech => {
@@ -49,10 +48,9 @@ const PortfolioDetail = ({ slug }) => {
                 <Description>
                     <p>{data?.data?.longDescription}</p>
                 </Description>
-                <img src={data?.data?.image} layoutId={`image ${slug}`} />
+                <motion.img src={data?.data?.image} layoutId={`image ${slug}`} />
             </Detail>
         </CardShaddow>
-
     )
 }
 
@@ -82,7 +80,6 @@ const Detail = styled.div`
     border-radius: 1rem;
     background: white;
     position: absolute;
-    border-radius: 1rem;
     left: 10%;
     top: 15%;
     margin-bottom: 10%;
@@ -108,7 +105,6 @@ const Title = styled.h2`
 
 const Description = styled.div`
     padding: 2rem 5rem;
-    cursor: point;
     p{
         color: black;
     }

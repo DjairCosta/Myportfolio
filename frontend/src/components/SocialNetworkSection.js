@@ -17,7 +17,7 @@ const SocialNetworkSection = () => {
                 <FontAwesomeIcon icon={faLinkedin} size='4x' />
                 <h3>linkedin.com/djaircosta</h3>
             </Social>
-            <Social href="https://youtube.com/c/DjairCostaBR" target='_blank'>
+            <Social href="https://www.youtube.com/channel/UCc90vMwg_FRPV801y3Ihf4w" target='_blank'>
                 <FontAwesomeIcon icon={faYoutubeSquare} size='4x' />
                 <h3>youtube.com/djaircosta</h3>
             </Social>
